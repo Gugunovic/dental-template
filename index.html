@@ -1,61 +1,148 @@
-<section class="py-20 bg-white">
-    <div class="max-w-3xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-slate-900">Informativni izračun storitev</h2>
-            <p class="text-slate-500 mt-2">Izberite storitve za hiter informativni predračun.</p>
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitalni Nasmeh | Digitalac Dental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Za Pre/Posle slider */
+        .comparison-container { position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 1rem; }
+        .comparison-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+        .before-image { z-index: 1; }
+        .after-image { z-index: 2; width: 50%; /* Početna pozicija klizača */ }
+        .comparison-slider { position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: #fff; z-index: 3; cursor: ew-resize; }
+        .comparison-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: #fff; border-radius: 50%; z-index: 4; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto sticky top-0 bg-slate-50/90 backdrop-blur-sm z-50">
+        <div class="text-2xl font-bold text-blue-600">DIGITALAC DENTAL</div>
+        <a href="#kontakt" class="bg-blue-600 text-white px-6 py-2 rounded-full font-medium">Povpraševanje</a>
+    </nav>
+
+    <header class="max-w-4xl mx-auto px-6 py-20 text-center">
+        <h1 class="text-5xl font-extrabold mb-6">Vaš nasmeh, naša strast.</h1>
+        <p class="text-xl text-slate-600 mb-10">Sodobno zobozdravstvo za samozavesten nasmeh. Oglejte si rezultate naše preobrazbe.</p>
+        <div class="inline-block bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+            <span class="block text-2xl font-bold text-blue-600">249€*</span>
+            <span class="text-xs text-slate-400 uppercase tracking-widest text-center block">Informativna cena izdelave spletne strani</span>
         </div>
+    </header>
 
-        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-xl">
-            <div class="space-y-4">
-                <div class="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100 hover:border-blue-300 transition cursor-pointer group">
-                    <label class="flex items-center cursor-pointer gap-3 w-full">
-                        <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="650">
-                        <span class="font-medium text-slate-700">Zobni implantat (Premium)</span>
-                    </label>
-                    <span class="font-bold text-blue-600">650€</span>
-                </div>
-
-                <div class="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100 hover:border-blue-300 transition cursor-pointer">
-                    <label class="flex items-center cursor-pointer gap-3 w-full">
-                        <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="120">
-                        <span class="font-medium text-slate-700">Profesionalno beljenje zob</span>
-                    </label>
-                    <span class="font-bold text-blue-600">120€</span>
-                </div>
-
-                <div class="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100 hover:border-blue-300 transition cursor-pointer">
-                    <label class="flex items-center cursor-pointer gap-3 w-full">
-                        <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="45">
-                        <span class="font-medium text-slate-700">Higienski pregled in čiščenje</span>
-                    </label>
-                    <span class="font-bold text-blue-600">45€</span>
+    <section class="py-20 bg-white" id="primeri">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Rezultati, ki govorijo zase</h2>
+            
+            <div class="comparison-container shadow-2xl mb-10">
+                <img src="https://via.placeholder.com/800x400/e0e0e0/999999?text=PRED+POSEGOM" alt="Zobje pred posegom" class="comparison-image before-image">
+                <img src="https://via.placeholder.com/800x400/0ea5e9/ffffff?text=PO+POSEGU" alt="Zobje po posegu" class="comparison-image after-image">
+                <div class="comparison-slider"></div>
+                <div class="comparison-handle">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                    </svg>
                 </div>
             </div>
+            
+            <p class="text-center text-slate-500">Povlecite drsnik levo in desno za primerjavo.</p>
+        </div>
+    </section>
 
-            <div class="mt-10 pt-6 border-t border-slate-200 flex justify-between items-center">
-                <div>
-                    <span class="text-sm text-slate-500 uppercase font-bold tracking-wider">Skupaj (Informativno)</span>
-                    <div class="text-4xl font-black text-slate-900"><span id="total-price">0</span>€</div>
+    <section class="py-20 bg-slate-50" id="cenik">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">Informativni izračun storitev</h2>
+                <p class="text-slate-500 mt-2">Izberite storitve za hiter informativni predračun.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition cursor-pointer group">
+                        <label class="flex items-center cursor-pointer gap-3 w-full">
+                            <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="650">
+                            <span class="font-medium text-slate-700">Zobni implantat (Premium)</span>
+                        </label>
+                        <span class="font-bold text-blue-600">650€</span>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition cursor-pointer">
+                        <label class="flex items-center cursor-pointer gap-3 w-full">
+                            <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="120">
+                            <span class="font-medium text-slate-700">Profesionalno beljenje zob</span>
+                        </label>
+                        <span class="font-bold text-blue-600">120€</span>
+                    </div>
                 </div>
-                <button class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition">Rezerviraj termin</button>
+
+                <div class="mt-10 pt-6 border-t border-slate-200 flex justify-between items-center">
+                    <div>
+                        <span class="text-sm text-slate-500 uppercase font-bold tracking-wider">Skupaj (Informativno)</span>
+                        <div class="text-4xl font-black text-slate-900"><span id="total-price">0</span>€</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    
+    <section class="py-20 bg-blue-600 text-white text-center" id="kontakt">
+        <h2 class="text-3xl font-bold mb-6">Naročite se na pregled</h2>
+        <p class="text-blue-100 mb-8">Začnite svojo pot do popolnega nasmeha že danes.</p>
+        <a href="mailto:ordinacija@primer.si" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition">Pošlji povpraševanje</a>
+    </section>
 
-<script>
-    const checkboxes = document.querySelectorAll('.dental-service');
-    const totalDisplay = document.getElementById('total-price');
+    <footer class="py-6 text-center text-slate-500 text-sm">
+        &copy; 2026 Digitalac Dental. Vse pravice pridržane.
+    </footer>
 
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            let total = 0;
-            checkboxes.forEach(c => {
-                if (c.checked) {
-                    total += parseInt(c.getAttribute('data-price'));
-                }
+    <script>
+        // Pre/Posle Slider Logika
+        const container = document.querySelector('.comparison-container');
+        const afterImage = document.querySelector('.after-image');
+        const slider = document.querySelector('.comparison-slider');
+        const handle = document.querySelector('.comparison-handle');
+
+        let isDragging = false;
+
+        const drag = (e) => {
+            if (!isDragging) return;
+            const containerRect = container.getBoundingClientRect();
+            let x = (e.clientX || e.touches[0].clientX) - containerRect.left;
+            x = Math.max(0, Math.min(x, containerRect.width)); // Ograniči kretanje unutar kontejnera
+            const percent = (x / containerRect.width) * 100;
+            
+            afterImage.style.width = `${percent}%`;
+            slider.style.left = `${percent}%`;
+            handle.style.left = `${percent}%`;
+        };
+
+        slider.addEventListener('mousedown', () => isDragging = true);
+        handle.addEventListener('mousedown', () => isDragging = true);
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', drag);
+
+        // Podrška za touch uređaje
+        slider.addEventListener('touchstart', () => isDragging = true);
+        handle.addEventListener('touchstart', () => isDragging = true);
+        window.addEventListener('touchend', () => isDragging = false);
+        window.addEventListener('touchmove', drag);
+
+        // Kalkulator Logika
+        const checkboxes = document.querySelectorAll('.dental-service');
+        const totalDisplay = document.getElementById('total-price');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                let total = 0;
+                checkboxes.forEach(c => {
+                    if (c.checked) {
+                        total += parseInt(c.getAttribute('data-price'));
+                    }
+                });
+                totalDisplay.innerText = total;
             });
-            totalDisplay.innerText = total;
         });
-    });
-</script>
+    </script>
+</body>
+</html>
