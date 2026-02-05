@@ -1,23 +1,61 @@
-<!DOCTYPE html>
-<html lang="sl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dentalni Marketing | Digitalac</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-50 text-slate-900">
-    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
-        <div class="text-2xl font-bold text-blue-600">DIGITALAC DENTAL</div>
-        <a href="mailto:jovan@digitalac.info" class="bg-blue-600 text-white px-6 py-2 rounded-full font-medium">Kontakt</a>
-    </nav>
-    <header class="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h1 class="text-5xl font-extrabold mb-6">Digitalni nasmeh vaše ordinacije.</h1>
-        <p class="text-xl text-slate-600 mb-10">Ustvarjamo moderne spletne strani, ki pacientom vlijejo zaupanje.</p>
-        <div class="inline-block bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
-            <span class="block text-2xl font-bold text-blue-600">249€*</span>
-            <span class="text-xs text-slate-400 uppercase tracking-widest text-center block">Informativna cena</span>
+<section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-slate-900">Informativni izračun storitev</h2>
+            <p class="text-slate-500 mt-2">Izberite storitve za hiter informativni predračun.</p>
         </div>
-    </header>
-</body>
-</html>
+
+        <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-xl">
+            <div class="space-y-4">
+                <div class="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100 hover:border-blue-300 transition cursor-pointer group">
+                    <label class="flex items-center cursor-pointer gap-3 w-full">
+                        <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="650">
+                        <span class="font-medium text-slate-700">Zobni implantat (Premium)</span>
+                    </label>
+                    <span class="font-bold text-blue-600">650€</span>
+                </div>
+
+                <div class="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100 hover:border-blue-300 transition cursor-pointer">
+                    <label class="flex items-center cursor-pointer gap-3 w-full">
+                        <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="120">
+                        <span class="font-medium text-slate-700">Profesionalno beljenje zob</span>
+                    </label>
+                    <span class="font-bold text-blue-600">120€</span>
+                </div>
+
+                <div class="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100 hover:border-blue-300 transition cursor-pointer">
+                    <label class="flex items-center cursor-pointer gap-3 w-full">
+                        <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="45">
+                        <span class="font-medium text-slate-700">Higienski pregled in čiščenje</span>
+                    </label>
+                    <span class="font-bold text-blue-600">45€</span>
+                </div>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-slate-200 flex justify-between items-center">
+                <div>
+                    <span class="text-sm text-slate-500 uppercase font-bold tracking-wider">Skupaj (Informativno)</span>
+                    <div class="text-4xl font-black text-slate-900"><span id="total-price">0</span>€</div>
+                </div>
+                <button class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition">Rezerviraj termin</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const checkboxes = document.querySelectorAll('.dental-service');
+    const totalDisplay = document.getElementById('total-price');
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            let total = 0;
+            checkboxes.forEach(c => {
+                if (c.checked) {
+                    total += parseInt(c.getAttribute('data-price'));
+                }
+            });
+            totalDisplay.innerText = total;
+        });
+    });
+</script>
