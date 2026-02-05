@@ -3,98 +3,527 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digitalni Nasmeh | Digitalac Dental</title>
+    <title>Dentalna Ordinacija Ljubljana | Vaš Nasmeh</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Za Pre/Posle slider */
-        .comparison-container { position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 1rem; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg { 
+            background-image: linear-gradient(rgba(14, 165, 233, 0.8), rgba(37, 99, 235, 0.8)), 
+                        url('https://picsum.photos/seed/dental-clinic/1920/1080.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed;
+        }
+        .comparison-container { position: relative; width: 100%; height: 500px; overflow: hidden; border-radius: 1rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         .comparison-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
         .before-image { z-index: 1; }
-        .after-image { z-index: 2; width: 50%; /* Početna pozicija klizača */ }
-        .comparison-slider { position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: #fff; z-index: 3; cursor: ew-resize; }
-        .comparison-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: #fff; border-radius: 50%; z-index: 4; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .after-image { z-index: 2; width: 50%; }
+        .comparison-slider { position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: #fff; z-index: 3; cursor: ew-resize; box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+        .comparison-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50px; height: 50px; background: linear-gradient(135deg, #0ea5e9, #2563eb); border-radius: 50%; z-index: 4; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 3px solid white; }
+        .star-rating { color: #fbbf24; }
+        .glass-effect { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-white text-gray-900">
 
-    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto sticky top-0 bg-slate-50/90 backdrop-blur-sm z-50">
-        <div class="text-2xl font-bold text-blue-600">DIGITALAC DENTAL</div>
-        <a href="#kontakt" class="bg-blue-600 text-white px-6 py-2 rounded-full font-medium">Povpraševanje</a>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-tooth text-3xl text-blue-600"></i>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-transparent">Dentalna Ordinacija</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#domov" class="text-gray-700 hover:text-blue-600 transition font-medium">Domov</a>
+                    <a href="#o-nas" class="text-gray-700 hover:text-blue-600 transition font-medium">O nas</a>
+                    <a href="#storitve" class="text-gray-700 hover:text-blue-600 transition font-medium">Storitve</a>
+                    <a href="#cenik" class="text-gray-700 hover:text-blue-600 transition font-medium">Cenik</a>
+                    <a href="#kontakt" class="text-gray-700 hover:text-blue-600 transition font-medium">Kontakt</a>
+                </div>
+                <a href="#kontakt" class="bg-gradient-to-r from-sky-500 to-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">
+                    Naroči se
+                </a>
+            </div>
+        </div>
     </nav>
 
-    <header class="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h1 class="text-5xl font-extrabold mb-6">Vaš nasmeh, naša strast.</h1>
-        <p class="text-xl text-slate-600 mb-10">Sodobno zobozdravstvo za samozavesten nasmeh. Oglejte si rezultate naše preobrazbe.</p>
-        <div class="inline-block bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
-            <span class="block text-2xl font-bold text-blue-600">249€*</span>
-            <span class="text-xs text-slate-400 uppercase tracking-widest text-center block">Informativna cena izdelave spletne strani</span>
+    <!-- Hero Section -->
+    <section id="domov" class="hero-bg min-h-screen flex items-center justify-center text-white relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+                Vaš nasmeh, naša prioriteta.
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 text-blue-100 max-w-2xl mx-auto">
+                Sodobna dentalna ordinacija z 15-letno tradicijo in najboljšo tehnologijo za vaš zdrav nasmeh.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#kontakt" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition transform hover:scale-105 shadow-xl">
+                    Naroči se
+                </a>
+                <a href="#storitve" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition transform hover:scale-105">
+                    Naše storitve
+                </a>
+            </div>
         </div>
-    </header>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-3xl text-white/70"></i>
+        </div>
+    </section>
 
-    <section class="py-20 bg-white" id="primeri">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Rezultati, ki govorijo zase</h2>
+    <!-- About Section -->
+    <section id="o-nas" class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent">
+                    O naši ordinaciji
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-sky-500 to-blue-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Z več kot <span class="font-bold text-blue-600">15 leti izkušenj</span> smo postali sinonim za kakovostno in zaupanja vredno dentalno oskrbo v Ljubljani. Naša ekipa strokovnjakov je posvečena vašemu zdravju in lepoti nasmeha.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        V naši ordinaciji združujemo <span class="font-semibold">najmodernejšo tehnologijo</span> s personaliziranim pristopom. Od digitalne rentgenske diagnostike do laserske terapije, vsako storitev izvajamo z najvišjimi standardi kakovosti.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6 pt-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">15+</div>
+                            <div class="text-sm text-gray-600">Let izkušenj</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">5000+</div>
+                            <div class="text-sm text-gray-600">Zadovolnih strank</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">24/7</div>
+                            <div class="text-sm text-gray-600">Podpora v sili</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://picsum.photos/seed/dental-office/600/400.jpg" alt="Naša ordinacija" class="rounded-3xl shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-gradient-to-r from-sky-500 to-blue-600 text-white p-6 rounded-2xl shadow-xl">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-award text-3xl"></i>
+                            <div>
+                                <div class="font-bold">Certificirana kakovost</div>
+                                <div class="text-sm opacity-90">ISO 9001:2015</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Kaj pravijo naši stranke</h2>
+                <p class="text-xl text-gray-600">Ocenne in izkušnje, ki nas delajo ponosne</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-500">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-sm">"Odlična storitev in profesionalni pristop. Doktor je pojasnil vsak korak in me postavil na popolnoma prijetno."</p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/person1/40/40.jpg" alt="Maja K." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold text-gray-900">Maja K.</div>
+                            <div class="text-xs text-gray-500">Pred 2 tedni</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-500">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-sm">"Najboljša dentalna ordinacija v Ljubljani! Moderna oprema in zelo prijazno osebje. Toplo priporočam!"</p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/person2/40/40.jpg" alt="Marko L." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold text-gray-900">Marko L.</div>
+                            <div class="text-xs text-gray-500">Pred 1 mesecem</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-500">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-sm">"Hitra in učinkovita obravnava. Beljenje zob je dalo rezultate, ki presegajo moje pričakovanje. Hvala!"</p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/person3/40/40.jpg" alt="Ana P." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold text-gray-900">Ana P.</div>
+                            <div class="text-xs text-gray-500">Pred 3 tedni</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-500">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-sm">"Implantati so izgledali kot naravni zobje. Zadovoljna sem s končnim rezultatom in strokovnostjo ekipe."</p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/person4/40/40.jpg" alt="Robert S." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold text-gray-900">Robert S.</div>
+                            <div class="text-xs text-gray-500">Pred 2 meseci</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="storitve" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent">
+                    Naše storitve
+                </h2>
+                <p class="text-xl text-gray-600">Kompleksna dentalna oskrba za vaš zdrav nasmeh</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group bg-gradient-to-br from-blue-50 to-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 hover:border-blue-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-tooth text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Implantati</h3>
+                    <p class="text-gray-600 mb-6">Najmodernejše dentalne implantate za trajno rešitev manjkajočih zob. Garantirana kakovost in naraven videz.</p>
+                    <div class="text-blue-600 font-semibold">Od 650€</div>
+                </div>
+
+                <div class="group bg-gradient-to-br from-blue-50 to-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 hover:border-blue-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-sparkles text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Beljenje zob</h3>
+                    <p class="text-gray-600 mb-6">Profesionalno beljenje z najnovejšo tehnologijo za sijajen nasmeh. Vidni rezultati že po prvem obisku.</p>
+                    <div class="text-blue-600 font-semibold">Od 120€</div>
+                </div>
+
+                <div class="group bg-gradient-to-br from-blue-50 to-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 hover:border-blue-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-align-left text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Ortodontija</h3>
+                    <p class="text-gray-600 mb-6">Popravljanje nepravilnosti zob z modernimi ortodontskih rešitvami za popoln nasmeh v vsaki starosti.</p>
+                    <div class="text-blue-600 font-semibold">Od 800€</div>
+                </div>
+
+                <div class="group bg-gradient-to-br from-blue-50 to-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 hover:border-blue-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Ustna higiena</h3>
+                    <p class="text-gray-600 mb-6">Redno čiščenje in preventiva za zdravje dlesni in zob. Preprečevanje težav preden nastanejo.</p>
+                    <div class="text-blue-600 font-semibold">Od 50€</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent">
+                    Preobrazba nasmeha
+                </h2>
+                <p class="text-xl text-gray-600">Rezultati naših strank</p>
+            </div>
             
             <div class="comparison-container shadow-2xl mb-10">
-                <img src="https://via.placeholder.com/800x400/e0e0e0/999999?text=PRED+POSEGOM" alt="Zobje pred posegom" class="comparison-image before-image">
-                <img src="https://via.placeholder.com/800x400/0ea5e9/ffffff?text=PO+POSEGU" alt="Zobje po posegu" class="comparison-image after-image">
+                <img src="https://picsum.photos/seed/teeth-before/800/500.jpg" alt="Zobje pred posegom" class="comparison-image before-image">
+                <img src="https://picsum.photos/seed/teeth-after/800/500.jpg" alt="Zobje po posegu" class="comparison-image after-image">
                 <div class="comparison-slider"></div>
                 <div class="comparison-handle">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-                    </svg>
+                    <i class="fas fa-arrows-alt-h text-white text-xl"></i>
+                </div>
+                <div class="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
+                    Potem
                 </div>
             </div>
             
-            <p class="text-center text-slate-500">Povlecite drsnik levo in desno za primerjavo.</p>
+            <div class="text-center">
+                <p class="text-lg text-gray-700 mb-2">Rezultati naših strank</p>
+                <p class="text-2xl font-bold text-blue-600">Naj bo tvoj nasmeh pot v življenje.</p>
+            </div>
         </div>
     </section>
 
-    <section class="py-20 bg-slate-50" id="cenik">
-        <div class="max-w-3xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-slate-900">Informativni izračun storitev</h2>
-                <p class="text-slate-500 mt-2">Izberite storitve za hiter informativni predračun.</p>
+    <!-- Pricing & Calculator Section -->
+    <section id="cenik" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent">
+                    Cenik storitev
+                </h2>
+                <p class="text-xl text-gray-600">Transparentne cene za kakovostno dentalno oskrbo</p>
             </div>
 
-            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl">
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition cursor-pointer group">
-                        <label class="flex items-center cursor-pointer gap-3 w-full">
-                            <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="650">
-                            <span class="font-medium text-slate-700">Zobni implantat (Premium)</span>
-                        </label>
-                        <span class="font-bold text-blue-600">650€</span>
-                    </div>
-
-                    <div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition cursor-pointer">
-                        <label class="flex items-center cursor-pointer gap-3 w-full">
-                            <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="120">
-                            <span class="font-medium text-slate-700">Profesionalno beljenje zob</span>
-                        </label>
-                        <span class="font-bold text-blue-600">120€</span>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Price List -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Cenik storitev</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl hover:bg-blue-50 transition">
+                            <span class="font-medium text-gray-700">Zobni implantat</span>
+                            <span class="font-bold text-blue-600">650€</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl hover:bg-blue-50 transition">
+                            <span class="font-medium text-gray-700">Profesionalno beljenje zob</span>
+                            <span class="font-bold text-blue-600">120€</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl hover:bg-blue-50 transition">
+                            <span class="font-medium text-gray-700">Ortodontska obravnava</span>
+                            <span class="font-bold text-blue-600">800€</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl hover:bg-blue-50 transition">
+                            <span class="font-medium text-gray-700">Ustna higiena (čiščenje)</span>
+                            <span class="font-bold text-blue-600">50€</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl hover:bg-blue-50 transition">
+                            <span class="font-medium text-gray-700">Rentgenska posnetek</span>
+                            <span class="font-bold text-blue-600">25€</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl hover:bg-blue-50 transition">
+                            <span class="font-medium text-gray-700">Izdelava krone</span>
+                            <span class="font-bold text-blue-600">350€</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="mt-10 pt-6 border-t border-slate-200 flex justify-between items-center">
+                <!-- Calculator -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Interaktivni kalkulator</h3>
+                    <p class="text-gray-600 mb-6">Izberite storitve za informativni predračun</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <label class="flex items-center cursor-pointer gap-3 w-full">
+                                <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="650">
+                                <span class="font-medium text-gray-700">Zobni implantat</span>
+                            </label>
+                            <span class="font-bold text-blue-600">650€</span>
+                        </div>
+
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <label class="flex items-center cursor-pointer gap-3 w-full">
+                                <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="120">
+                                <span class="font-medium text-gray-700">Beljenje zob</span>
+                            </label>
+                            <span class="font-bold text-blue-600">120€</span>
+                        </div>
+
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <label class="flex items-center cursor-pointer gap-3 w-full">
+                                <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="800">
+                                <span class="font-medium text-gray-700">Ortodontija</span>
+                            </label>
+                            <span class="font-bold text-blue-600">800€</span>
+                        </div>
+
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <label class="flex items-center cursor-pointer gap-3 w-full">
+                                <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dental-service" data-price="50">
+                                <span class="font-medium text-gray-700">Ustna higiena</span>
+                            </label>
+                            <span class="font-bold text-blue-600">50€</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-blue-600 to-sky-500 text-white p-6 rounded-2xl">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-sm opacity-90 uppercase font-bold tracking-wider">Skupaj (Informativno)</span>
+                                <div class="text-4xl font-black"><span id="total-price">0</span>€</div>
+                            </div>
+                            <i class="fas fa-calculator text-4xl opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="kontakt" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent">
+                    Naročite se na pregled
+                </h2>
+                <p class="text-xl text-gray-600">Začnite svojo pot do popolnega nasmeha</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 shadow-xl border border-blue-100">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Ime *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Vaše ime">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Priimek *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Vaš priimek">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="vas@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Telefon *</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="+386 40 123 456">
+                        </div>
+                    </div>
+
                     <div>
-                        <span class="text-sm text-slate-500 uppercase font-bold tracking-wider">Skupaj (Informativno)</span>
-                        <div class="text-4xl font-black text-slate-900"><span id="total-price">0</span>€</div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Želena storitev *</label>
+                        <select required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                            <option value="">Izberite storitev</option>
+                            <option value="implantat">Zobni implantat</option>
+                            <option value="beljenje">Beljenje zob</option>
+                            <option value="ortodontija">Ortodontija</option>
+                            <option value="higiena">Ustna higiena</option>
+                            <option value="drugo">Drugo</option>
+                        </select>
                     </div>
-                </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Čas, ki bi vam ustrezal</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Npr. Ponedeljek popoldne">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Dodatne informacije</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Opisite svoje potrebe ali vprašanja..."></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="bg-gradient-to-r from-sky-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition transform hover:scale-105">
+                            Pošlji povpraševanje
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
-    
-    <section class="py-20 bg-blue-600 text-white text-center" id="kontakt">
-        <h2 class="text-3xl font-bold mb-6">Naročite se na pregled</h2>
-        <p class="text-blue-100 mb-8">Začnite svojo pot do popolnega nasmeha že danes.</p>
-        <a href="mailto:ordinacija@primer.si" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition">Pošlji povpraševanje</a>
-    </section>
 
-    <footer class="py-6 text-center text-slate-500 text-sm">
-        &copy; 2026 Digitalac Dental. Vse pravice pridržane.
-    </footer>
+    <!-- Map & Footer Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h3 class="text-3xl font-bold mb-6">Obiščite nas</h3>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-map-marker-alt text-2xl text-blue-400"></i>
+                            <div>
+                                <div class="font-semibold">Naslov</div>
+                                <div class="text-gray-300">Slovenska cesta 50, 1000 Ljubljana</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-phone text-2xl text-blue-400"></i>
+                            <div>
+                                <div class="font-semibold">Telefon</div>
+                                <div class="text-gray-300">+386 1 234 56 78</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-envelope text-2xl text-blue-400"></i>
+                            <div>
+                                <div class="font-semibold">Email</div>
+                                <div class="text-gray-300">info@dentalna-ordinacija.si</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.123456789!2d14.505751315544!3d46.051080979094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDAzJzA0LjAiTiAxNMKwMzAnMjAuNyJF!5e0!3m2!1ssl!2ssi!4v1234567890"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        class="w-full h-full min-h-[400px]">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2026 Dentalna Ordinacija Ljubljana. Vse pravice pridržane.</p>
+            </div>
+        </div>
+    </section>
 
     <script>
         // Pre/Posle Slider Logika
@@ -109,7 +538,7 @@
             if (!isDragging) return;
             const containerRect = container.getBoundingClientRect();
             let x = (e.clientX || e.touches[0].clientX) - containerRect.left;
-            x = Math.max(0, Math.min(x, containerRect.width)); // Ograniči kretanje unutar kontejnera
+            x = Math.max(0, Math.min(x, containerRect.width));
             const percent = (x / containerRect.width) * 100;
             
             afterImage.style.width = `${percent}%`;
@@ -142,6 +571,12 @@
                 });
                 totalDisplay.innerText = total;
             });
+        });
+
+        // Contact Form Validation
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Hvala za vaše povpraševanje! Kontaktirali vas bomo v najkrajšem možnem času.');
         });
     </script>
 </body>
