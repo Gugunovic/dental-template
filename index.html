@@ -12,8 +12,9 @@
             theme: {
                 extend: {
                     colors: {
-                        ice: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#b9e5fe', 300: '#7cd4fd', 400: '#36bffa', 500: '#0ca6eb', 600: '#0084c9', 700: '#0169a3', 800: '#065986', 900: '#0b4a6f' },
-                        navy: { 800: '#1e2a4a', 900: '#0f172a' }
+                        ice: { 50: '#effaf7', 100: '#d6f2eb', 200: '#aee3d6', 300: '#7ccfbe', 400: '#4fb9a7', 500: '#2aa191', 600: '#1f8376', 700: '#1c6a60', 800: '#1a544e', 900: '#14423e' },
+                        navy: { 800: '#1f2a37', 900: '#111827' },
+                        gray: { 50: '#f9fafb', 100: '#f3f4f6', 200: '#e5e7eb', 300: '#d1d5db', 400: '#9ca3af', 500: '#4b5563', 600: '#374151', 700: '#1f2937', 800: '#111827', 900: '#0b1220' }
                     },
                     fontFamily: {
                         display: ['Playfair Display', 'serif'],
@@ -24,7 +25,7 @@
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.65; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
         .font-display { font-family: 'Playfair Display', serif; }
         .comparison-container { position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden; border-radius: 1.5rem; }
         .comparison-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -40,7 +41,7 @@
         .blob { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
         .star-rating { color: #fbbf24; }
         html { scroll-behavior: smooth; }
-        .text-gradient { background: linear-gradient(135deg, #0ca6eb 0%, #0169a3 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .text-gradient { background: linear-gradient(135deg, #2aa191 0%, #1c6a60 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .mobile-menu-open { overflow: hidden; }
         html, body { overflow-x: hidden; }
     </style>
@@ -150,9 +151,9 @@
                     <div class="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-400">
                         <div class="flex items-center gap-2">
                             <div class="flex -space-x-2">
-                                <img src="https://picsum.photos/seed/p1/32/32" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white" alt="">
-                                <img src="https://picsum.photos/seed/p2/32/32" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white" alt="">
-                                <img src="https://picsum.photos/seed/p3/32/32" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white" alt="">
+                                <img src="https://source.unsplash.com/64x64/?portrait,smile" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white" alt="">
+                                <img src="https://source.unsplash.com/64x64/?portrait,person" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white" alt="">
+                                <img src="https://source.unsplash.com/64x64/?portrait,face" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white" alt="">
                             </div>
                             <span class="text-gray-600 font-medium">5000+ pacientov</span>
                         </div>
@@ -166,7 +167,7 @@
 
                 <div class="relative hidden lg:block">
                     <div class="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl shadow-ice-200/40">
-                        <img src="https://picsum.photos/seed/dental-hero-modern/700/850" alt="Moderna dentalna ordinacija" class="w-full h-[560px] object-cover">
+                        <img src="https://source.unsplash.com/700x850/?dental,clinic,interior" alt="Moderna dentalna ordinacija" class="w-full h-[560px] object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-navy-900/20 to-transparent"></div>
                     </div>
                     <div class="absolute -left-12 top-16 z-20 bg-white/90 backdrop-blur-lg rounded-2xl p-5 shadow-xl shadow-gray-200/50 animate-float">
@@ -260,10 +261,10 @@
             <div class="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
                 <div class="relative">
                     <div class="relative rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-2xl">
-                        <img src="https://picsum.photos/seed/dental-office-lux/650/500" alt="Moderna dentalna ordinacija" class="w-full h-[240px] sm:h-[320px] lg:h-[450px] object-cover">
+                        <img src="https://source.unsplash.com/650x500/?dentist,dental,office" alt="Moderna dentalna ordinacija" class="w-full h-[240px] sm:h-[320px] lg:h-[450px] object-cover">
                     </div>
                     <div class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-32 h-32 sm:w-48 sm:h-48 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border-4 border-white hidden md:block">
-                        <img src="https://picsum.photos/seed/dental-team/300/300" alt="Naša ekipa" class="w-full h-full object-cover">
+                        <img src="https://source.unsplash.com/300x300/?dentist,team" alt="Naša ekipa" class="w-full h-full object-cover">
                     </div>
                     <div class="absolute top-4 -left-4 sm:top-6 sm:-left-6 bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg hidden md:block">
                         <div class="flex items-center gap-2 sm:gap-3">
@@ -389,8 +390,8 @@
                 <!-- Slider first on mobile for visual impact, text second -->
                 <div class="relative order-1 lg:order-2">
                     <div class="comparison-container shadow-2xl border-4 border-white">
-                        <img src="https://picsum.photos/seed/teeth-before/800/500" alt="Pred posegom" class="comparison-image before-image">
-                        <img src="https://picsum.photos/seed/teeth-after/800/500" alt="Po posegu" class="comparison-image after-image">
+                        <img src="https://source.unsplash.com/800x500/?teeth,dental,before" alt="Pred posegom" class="comparison-image before-image">
+                        <img src="https://source.unsplash.com/800x500/?teeth,dental,whitening" alt="Po posegu" class="comparison-image after-image">
                         <div class="comparison-slider"></div>
                         <div class="comparison-handle">
                             <i class="fas fa-arrows-alt-h text-ice-500 text-sm sm:text-lg"></i>
@@ -449,7 +450,7 @@
                     <div class="flex items-center gap-1 mb-3 sm:mb-4 star-rating text-xs sm:text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">"Odlična storitev in profesionalni pristop. Doktor je pojasnil vsak korak in me popolnoma pomiril. Rezultat presega pričakovanja!"</p>
                     <div class="flex items-center gap-3 pt-3 sm:pt-4 border-t border-gray-100">
-                        <img src="https://picsum.photos/seed/person1/48/48" alt="Maja K." class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover">
+                        <img src="https://source.unsplash.com/96x96/?portrait,woman" alt="Maja K." class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover">
                         <div>
                             <div class="font-semibold text-navy-900 text-xs sm:text-sm">Maja K.</div>
                             <div class="text-[10px] sm:text-xs text-gray-400">Google Review &middot; Pred 2 tedni</div>
@@ -461,7 +462,7 @@
                     <div class="flex items-center gap-1 mb-3 sm:mb-4 star-rating text-xs sm:text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">"Najboljša dentalna ordinacija v Ljubljani! Moderna oprema, prijazno osebje in izjemna pozornost do detajlov. Toplo priporočam!"</p>
                     <div class="flex items-center gap-3 pt-3 sm:pt-4 border-t border-gray-100">
-                        <img src="https://picsum.photos/seed/person2/48/48" alt="Marko L." class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover">
+                        <img src="https://source.unsplash.com/96x96/?portrait,man" alt="Marko L." class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover">
                         <div>
                             <div class="font-semibold text-navy-900 text-xs sm:text-sm">Marko L.</div>
                             <div class="text-[10px] sm:text-xs text-gray-400">Google Review &middot; Pred 1 mesecem</div>
@@ -473,7 +474,7 @@
                     <div class="flex items-center gap-1 mb-3 sm:mb-4 star-rating text-xs sm:text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">"Implantati izgledajo kot naravni zobje. Zadovoljna sem s končnim rezultatom in strokovnostjo celotne ekipe. Hvala vam!"</p>
                     <div class="flex items-center gap-3 pt-3 sm:pt-4 border-t border-gray-100">
-                        <img src="https://picsum.photos/seed/person3/48/48" alt="Ana P." class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover">
+                        <img src="https://source.unsplash.com/96x96/?portrait,woman,smile" alt="Ana P." class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover">
                         <div>
                             <div class="font-semibold text-navy-900 text-xs sm:text-sm">Ana P.</div>
                             <div class="text-[10px] sm:text-xs text-gray-400">Google Review &middot; Pred 3 tedni</div>
