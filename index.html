@@ -25,7 +25,16 @@
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.65; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.65; font-weight: 500; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+        @media (min-width: 640px) { body { font-size: 19px; } }
+        p { color: #374151; }
+        img { max-width: 100%; height: auto; display: block; }
+        iframe { max-width: 100%; }
+
+        .text-gray-400 { color: #6b7280 !important; }
+        .text-gray-500 { color: #374151 !important; }
+        .text-gray-600 { color: #1f2937 !important; }
         .font-display { font-family: 'Playfair Display', serif; }
         .comparison-container { position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden; border-radius: 1.5rem; }
         .comparison-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -151,9 +160,9 @@
                     <div class="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-400">
                         <div class="flex items-center gap-2">
                             <div class="flex -space-x-2">
-                                <img src="https://source.unsplash.com/64x64/?portrait,smile" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white" alt="">
-                                <img src="https://source.unsplash.com/64x64/?portrait,person" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white" alt="">
-                                <img src="https://source.unsplash.com/64x64/?portrait,face" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white" alt="">
+                                <img src="https://unsplash.com/photos/RnHhR_sip7M/download?force=true" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white" alt="">
+                                <img src="https://unsplash.com/photos/DvxlgRgX_Fo/download?force=true" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white" alt="">
+                                <img src="https://unsplash.com/photos/P3qLX14CJrk/download?force=true" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white" alt="">
                             </div>
                             <span class="text-gray-600 font-medium">5000+ pacientov</span>
                         </div>
@@ -167,7 +176,7 @@
 
                 <div class="relative hidden lg:block">
                     <div class="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl shadow-ice-200/40">
-                        <img src="https://source.unsplash.com/700x850/?dental,clinic,interior" alt="Moderna dentalna ordinacija" class="w-full h-[560px] object-cover">
+                        <img src="https://wp04-media.cdn.ihealthspot.com/wp-content/uploads/sites/313/2023/05/iStock-1419156177.jpg" alt="Moderna dentalna ordinacija" class="w-full h-[560px] object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-navy-900/20 to-transparent"></div>
                     </div>
                     <div class="absolute -left-12 top-16 z-20 bg-white/90 backdrop-blur-lg rounded-2xl p-5 shadow-xl shadow-gray-200/50 animate-float">
@@ -261,10 +270,10 @@
             <div class="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
                 <div class="relative">
                     <div class="relative rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-2xl">
-                        <img src="https://source.unsplash.com/650x500/?dentist,dental,office" alt="Moderna dentalna ordinacija" class="w-full h-[240px] sm:h-[320px] lg:h-[450px] object-cover">
+                        <img src="https://unsplash.com/photos/Fdku_oMrDvk/download?force=true" alt="Moderna dentalna ordinacija" class="w-full h-[240px] sm:h-[320px] lg:h-[450px] object-cover">
                     </div>
                     <div class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-32 h-32 sm:w-48 sm:h-48 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border-4 border-white hidden md:block">
-                        <img src="https://source.unsplash.com/300x300/?dentist,team" alt="Naša ekipa" class="w-full h-full object-cover">
+                        <img src="https://unsplash.com/photos/Fdku_oMrDvk/download?force=true" alt="Naša ekipa" class="w-full h-full object-cover">
                     </div>
                     <div class="absolute top-4 -left-4 sm:top-6 sm:-left-6 bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg hidden md:block">
                         <div class="flex items-center gap-2 sm:gap-3">
@@ -390,8 +399,8 @@
                 <!-- Slider first on mobile for visual impact, text second -->
                 <div class="relative order-1 lg:order-2">
                     <div class="comparison-container shadow-2xl border-4 border-white">
-                        <img src="https://source.unsplash.com/800x500/?teeth,dental,before" alt="Pred posegom" class="comparison-image before-image">
-                        <img src="https://source.unsplash.com/800x500/?teeth,dental,whitening" alt="Po posegu" class="comparison-image after-image">
+                        <img src="https://unsplash.com/photos/1UD2a2LjZNI/download?force=true" alt="Pred posegom" class="comparison-image before-image">
+                        <img src="https://unsplash.com/photos/glPVwPr1FKo/download?force=true" alt="Po posegu" class="comparison-image after-image">
                         <div class="comparison-slider"></div>
                         <div class="comparison-handle">
                             <i class="fas fa-arrows-alt-h text-ice-500 text-sm sm:text-lg"></i>
@@ -450,7 +459,7 @@
                     <div class="flex items-center gap-1 mb-3 sm:mb-4 star-rating text-xs sm:text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">"Odlična storitev in profesionalni pristop. Doktor je pojasnil vsak korak in me popolnoma pomiril. Rezultat presega pričakovanja!"</p>
                     <div class="flex items-center gap-3 pt-3 sm:pt-4 border-t border-gray-100">
-                        <img src="https://source.unsplash.com/96x96/?portrait,woman" alt="Maja K." class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover">
+                        <img src="https://unsplash.com/photos/RnHhR_sip7M/download?force=true" alt="Maja K." class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover">
                         <div>
                             <div class="font-semibold text-navy-900 text-xs sm:text-sm">Maja K.</div>
                             <div class="text-[10px] sm:text-xs text-gray-400">Google Review &middot; Pred 2 tedni</div>
@@ -462,7 +471,7 @@
                     <div class="flex items-center gap-1 mb-3 sm:mb-4 star-rating text-xs sm:text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">"Najboljša dentalna ordinacija v Ljubljani! Moderna oprema, prijazno osebje in izjemna pozornost do detajlov. Toplo priporočam!"</p>
                     <div class="flex items-center gap-3 pt-3 sm:pt-4 border-t border-gray-100">
-                        <img src="https://source.unsplash.com/96x96/?portrait,man" alt="Marko L." class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover">
+                        <img src="https://unsplash.com/photos/DvxlgRgX_Fo/download?force=true" alt="Marko L." class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover">
                         <div>
                             <div class="font-semibold text-navy-900 text-xs sm:text-sm">Marko L.</div>
                             <div class="text-[10px] sm:text-xs text-gray-400">Google Review &middot; Pred 1 mesecem</div>
@@ -474,7 +483,7 @@
                     <div class="flex items-center gap-1 mb-3 sm:mb-4 star-rating text-xs sm:text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">"Implantati izgledajo kot naravni zobje. Zadovoljna sem s končnim rezultatom in strokovnostjo celotne ekipe. Hvala vam!"</p>
                     <div class="flex items-center gap-3 pt-3 sm:pt-4 border-t border-gray-100">
-                        <img src="https://source.unsplash.com/96x96/?portrait,woman,smile" alt="Ana P." class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover">
+                        <img src="https://unsplash.com/photos/P3qLX14CJrk/download?force=true" alt="Ana P." class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover">
                         <div>
                             <div class="font-semibold text-navy-900 text-xs sm:text-sm">Ana P.</div>
                             <div class="text-[10px] sm:text-xs text-gray-400">Google Review &middot; Pred 3 tedni</div>
